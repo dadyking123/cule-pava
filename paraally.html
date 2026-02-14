@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="1f49a.webp">
+<title>Para Ti 💚</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Pantalla inicio */
+.inicio{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    z-index:5;
+}
+
+.inicio h1{
+    color:white;
+    font-size:40px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.inicio button{
+    padding:15px 30px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#ff4b6e;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* Carta */
+.contenedor{
+    display:none;
+    text-align:center;
+    padding:20px;
+}
+
+.carta{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    max-width:450px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.carta h2{
+    color:#ff4b6e;
+    margin-bottom:20px;
+}
+
+.carta p{
+    color:#444;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.boton{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4b6e;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* Corazones flotando */
+.corazon{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation: flotar linear infinite;
+}
+
+@keyframes flotar{
+    from{
+        transform: translateY(100vh) scale(1);
+        opacity:1;
+    }
+    to{
+        transform: translateY(-10vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+@media(max-width:500px){
+    .carta{
+        padding:25px;
+    }
+
+    .inicio h1{
+        font-size:28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Pantalla inicio -->
+<div class="inicio" id="inicio">
+    <h1>💚Esto es para ti mi niña 💚</h1>
+    <button onclick="abrirCarta()">Abrir</button>
+</div>
+
+<!-- Carta -->
+<div class="contenedor" id="cartaBox">
+    <div class="carta">
+        <h2>Feliz San Valentín 💚</h2>
+
+        <p>
+        perdon por no haber hecho esto antes
+         Quiero que sepas lo mucho que significas para mí y lo agradecido que estoy de tenerte en mi vida. a pesar de todas las peleas que hemos tenido, siempre hemos encontrado la manera de superarlas y seguir adelante juntos.
+        </p>
+
+        <p>
+        Te amo muchísimo   
+        te pido perdon por todo lo que te hice pasar, y por no haber sido el mejor novio para ti, pero quiero que sepas que cada día me esfuerzo por ser una mejor persona y un mejor compañero en tu vida
+        
+        
+        </p>
+
+        <button class="boton" onclick="sorpresa()">Mensaje Sorpresa</button>
+    </div>
+</div>
+
+<script>
+function abrirCarta(){
+    document.getElementById("inicio").style.display="none";
+    document.getElementById("cartaBox").style.display="block";
+}
+
+/* corazones */
+function crearCorazon(){
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "❤";
+    corazon.style.left = Math.random()*100+"vw";
+    corazon.style.animationDuration = (Math.random()*3+3)+"s";
+    document.body.appendChild(corazon);
+
+    setTimeout(()=>{
+        corazon.remove();
+    },6000);
+}
+
+setInterval(crearCorazon,400);
+
+function sorpresa(){
+    alert("me pone triste no poder estar a tu lado para poder compartir este dia y todos los dias contigo, me hace mucha ilusion verte, de verdad espero poder verte y voy a esperar ese dia pacientemente, te amo mucho y espero que podamos estar juntos por mucho tiempo mas, se que has de estar triste o molesta, pensando que ya no me gustas pero me gustas mucho siempre me vas a gustar y no quiero estar asi contigo y estoy seguro de que tu tampoco quieres estar asi, los dos nos extrañamos, los dos nos amamos, por que tenemos que estar respondiendonos asi?, como si no nos importara el otro sabiendo que eso es mentira pero en fin, te amo mucho mi niña y feliz san valentin mi amor 💚");
+}
+</script>
+
+</body>
+</html>
