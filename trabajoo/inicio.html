@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio | Cesar Barber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="icono-Photoroom.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            height: 1100px;
+            background: url("https://images.unsplash.com/photo-1517832606299-7ae9b720a186");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .contenedor {
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+
+        .inicio {
+            text-align: center;
+            color: white;
+            padding: 60px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+        }
+
+
+
+        .inicio h1 {
+            font-size: 42px;
+            color: #d4af37;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+
+
+        .inicio button {
+            padding: 12px 28px;
+            font-size: 15px;
+            background: #d4af37;
+            color: #111;
+            border: 1px solid #d4af37;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .inicio button:hover {
+            background: transparent;
+            color: #d4af37;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .inicio {
+                padding: 40px 20px;
+            }
+
+            .inicio h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="inicio">
+            <h1>Bienvenido a Cesar Barber</h1> <br>
+            <button onclick="window.location.href='barberia.html'">Entra ahora</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
